@@ -151,10 +151,10 @@
         <nav class="space-y-2 flex-grow">
             <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4">Categories</p>
             <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="all">All Collection</button>
-            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="casual">Casual Wear</button>
-            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="oversized">Oversized T-Shirts</button>
-            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="premium">Premium Edition</button>
-            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="sports">Sports & Active</button>
+            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="islamic">Islamic Content</button>
+            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="motivational">Motivational Content</button>
+            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="classical">Classical Content</button>
+            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="musicband">Music Band Content</button>
         </nav>
 
         <div class="mt-auto pt-6 border-t border-gray-100">
@@ -216,10 +216,10 @@
                     <button id="categoriesBtn" class="tab-btn">Categories</button>
                     <div id="categoriesDropdown" class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white border border-gray-200 rounded-2xl shadow-2xl py-2 min-w-[240px] z-50 overflow-hidden">
                         <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="all">All Collection</button>
-                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="casual">Casual Wear</button>
-                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="oversized">Oversized T-Shirts</button>
-                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="premium">Premium Edition</button>
-                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="sports">Sports & Active</button>
+                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="islamic">Islamic Content</button>
+                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="motivational">Motivational Content</button>
+                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="classical">Classical Content</button>
+                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="musicband">Music Band Content</button>
                     </div>
                 </div>
             </div>
@@ -419,10 +419,10 @@
 
                 const titleMap = {
                     'all': 'Exclusive Collection',
-                    'casual': 'Casual Collection',
-                    'oversized': 'Oversized Collection',
-                    'premium': 'Premium Collection',
-                    'sports': 'Sports Collection'
+                    'islamic': 'Islamic Content',
+                    'motivational': 'Motivational Content',
+                    'classical': 'Classical Content',
+                    'musicband': 'Music Band Content'
                 };
                 document.getElementById('viewTitle').innerText = titleMap[currentFilter] || 'Collection';
 
@@ -521,16 +521,24 @@
             updateCartCount();
         };
 
+        const catNames = {
+            'islamic': 'Islamic Content',
+            'motivational': 'Motivational Content',
+            'classical': 'Classical Content',
+            'musicband': 'Music Band Content'
+        };
+
         window.quickBuy = (id) => {
             const p = products.find(i => i.id === id);
-            const msg = `Hi! I want to know more about this product:\n\n🆔 ID: ${p.id}\n🛍️ Product: ${p.name}\n💰 Price: ৳ ${p.price}`;
+            const cat = catNames[p.cat] || p.cat;
+            const msg = `Hi! I want to know more about this product:\n\n🆔 ID: ${p.id}\n🛍️ Product: ${p.name}\n📂 Category: ${cat}\n💰 Price: ৳ ${p.price}`;
             window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
         };
 
         document.getElementById('waOrderBtn').onclick = () => {
-            let list = cart.map(i => `• [${i.id}] ${i.name} - ${i.qty} pcs`).join('\n');
+            let list = cart.map(i => `• [${i.id}] ${i.name} — ${catNames[i.cat] || i.cat} — ${i.qty} pcs`).join('\n');
             let total = cart.reduce((a, b) => a + (b.price * b.qty), 0);
-            const msg = `T-Shirt Order List:\n\n${list}\n\n💵 Total Bill: ৳ ${total}\n\nPlease confirm my order.`;
+            const msg = `Order List:\n\n${list}\n\n💵 Total Bill: ৳ ${total}\n\nPlease confirm my order.`;
             window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
         };
 
