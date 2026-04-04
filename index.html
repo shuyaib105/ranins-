@@ -11,7 +11,35 @@
             --font-en: 'Montserrat', sans-serif;
         }
         body { font-family: var(--font-en); background-color: #ffffff; overflow-x: hidden; }
-        .active-tab { border-bottom: 3px solid #000; color: #000; font-weight: 900; }
+
+        /* Tab Styles - Pill Design */
+        .tab-btn {
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid #e5e7eb;
+            background: transparent;
+            color: #374151;
+            user-select: none;
+        }
+        .tab-btn:hover {
+            border-color: #000;
+            color: #000;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .tab-btn.active {
+            background: #000;
+            border-color: #000;
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
 
         /* Rounded & Premium UI */
         .product-card {
@@ -122,7 +150,7 @@
 
         <nav class="space-y-2 flex-grow">
             <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4">Categories</p>
-            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition flex justify-between" data-cat="all"><span>All Collection</span> <small>✨</small></button>
+            <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="all">All Collection</button>
             <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="casual">Casual Wear</button>
             <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="oversized">Oversized T-Shirts</button>
             <button class="cat-link w-full text-left py-3 px-4 rounded-xl font-bold hover:bg-black hover:text-white transition" data-cat="premium">Premium Edition</button>
@@ -182,16 +210,16 @@
             <p class="text-gray-500 text-sm leading-relaxed px-4">
                 Looking for high-quality, 100% cotton t-shirts that are budget-friendly? We've got you covered! We aim to bring stylish and comfortable t-shirts to everyone, without breaking the bank. Premium quality, affordable prices. Shop now and express yourself!
             </p>
-            <div class="flex gap-4 justify-center mt-8 items-center flex-wrap">
-                <button id="shopTabBtn" class="active-tab pb-2 text-[11px] font-black uppercase tracking-[3px]">New Drop</button>
+            <div class="flex gap-3 justify-center mt-8 items-center flex-wrap">
+                <button id="shopTabBtn" class="tab-btn active">New Drop</button>
                 <div class="relative">
-                    <button id="categoriesBtn" class="pb-2 text-gray-300 text-[11px] font-black uppercase tracking-[3px]">Categories</button>
-                    <div id="categoriesDropdown" class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 bg-white border border-gray-100 rounded-2xl shadow-2xl py-3 min-w-[220px] z-50">
-                        <button class="cat-dropdown-item w-full text-left px-6 py-3 hover:bg-black hover:text-white transition font-bold text-sm" data-cat="all">All Collection</button>
-                        <button class="cat-dropdown-item w-full text-left px-6 py-3 hover:bg-black hover:text-white transition font-bold text-sm" data-cat="casual">Casual Wear</button>
-                        <button class="cat-dropdown-item w-full text-left px-6 py-3 hover:bg-black hover:text-white transition font-bold text-sm" data-cat="oversized">Oversized T-Shirts</button>
-                        <button class="cat-dropdown-item w-full text-left px-6 py-3 hover:bg-black hover:text-white transition font-bold text-sm" data-cat="premium">Premium Edition</button>
-                        <button class="cat-dropdown-item w-full text-left px-6 py-3 hover:bg-black hover:text-white transition font-bold text-sm" data-cat="sports">Sports & Active</button>
+                    <button id="categoriesBtn" class="tab-btn">Categories</button>
+                    <div id="categoriesDropdown" class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white border border-gray-200 rounded-2xl shadow-2xl py-2 min-w-[240px] z-50 overflow-hidden">
+                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="all">All Collection</button>
+                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="casual">Casual Wear</button>
+                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="oversized">Oversized T-Shirts</button>
+                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="premium">Premium Edition</button>
+                        <button class="cat-dropdown-item w-full text-left px-5 py-3.5 hover:bg-black hover:text-white transition font-bold text-[13px] text-gray-700" data-cat="sports">Sports & Active</button>
                     </div>
                 </div>
             </div>
@@ -242,22 +270,22 @@
             <div class="max-w-4xl mx-auto text-center">
                 <!-- Logo & Brand -->
                 <div class="flex items-center justify-center gap-3 mb-6">
-                    <img src=https://raw.githubusercontent.com/shuyaib105/ranins-/refs/heads/main/InShot_20260404_164816431.jpg" alt="Ranins Logo" class="h-20 w-auto object-contain">
+                    <img src="https://raw.githubusercontent.com/shuyaib105/ranins-/refs/heads/main/InShot_20260404_164816431.jpg" alt="Ranins" class="h-20 w-auto object-contain">
                 </div>
 
                 <!-- Social Links -->
                 <div class="flex justify-center gap-6 mb-8">
                     <!-- Facebook -->
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
                        class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
                         <span class="font-bold text-sm">Facebook</span>
                     </a>
-                    
+
                     <!-- WhatsApp -->
-                    <a href="https://wa.me/8801918318094" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://wa.me/8801918318094" target="_blank" rel="noopener noreferrer"
                        class="flex items-center gap-2 bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 448 512">
                             <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.8-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.5 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
@@ -339,7 +367,7 @@
                     <div class="product-card">
                         ${p.isNew ? '<span class="badge-new">NEW DROP</span>' : ''}
                         <div class="img-container aspect-[4/5]">
-                            <img src="${p.img}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                            <img src="${p.img}" class="w-full h-full object-cover">
                         </div>
                         <div class="p-5 pt-2">
                             <p class="text-[9px] text-gray-300 font-black tracking-widest mb-1 uppercase">SKU: ${p.id}</p>
@@ -360,13 +388,8 @@
 
         // Navigation
         function setActiveTab(id) {
-            document.getElementById('shopTabBtn').classList.remove('active-tab', 'text-black');
-            document.getElementById('shopTabBtn').classList.add('text-gray-300');
-            categoriesBtn.classList.remove('active-tab', 'text-black');
-            categoriesBtn.classList.add('text-gray-300');
-
-            document.getElementById(id).classList.add('active-tab', 'text-black');
-            document.getElementById(id).classList.remove('text-gray-300');
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
         }
 
         document.getElementById('shopTabBtn').onclick = () => {
@@ -383,18 +406,16 @@
         categoriesBtn.onclick = (e) => {
             e.stopPropagation();
             categoriesDropdown.classList.toggle('hidden');
-            categoriesBtn.classList.toggle('active-tab');
-            categoriesBtn.classList.toggle('text-black');
+            categoriesBtn.classList.toggle('active');
         };
 
         document.querySelectorAll('.cat-dropdown-item').forEach(item => {
             item.onclick = () => {
                 currentFilter = item.dataset.cat;
                 isNewOnly = false;
-                categoriesBtn.classList.remove('active-tab', 'text-black');
-                categoriesBtn.classList.add('text-gray-300');
-                document.getElementById('shopTabBtn').classList.remove('active-tab', 'text-black');
-                document.getElementById('shopTabBtn').classList.add('text-gray-300');
+                categoriesBtn.classList.remove('active');
+                document.getElementById('shopTabBtn').classList.remove('active');
+                document.getElementById('shopTabBtn').classList.add('active');
 
                 const titleMap = {
                     'all': 'Exclusive Collection',
@@ -413,8 +434,7 @@
         // Close dropdown when clicking outside
         document.addEventListener('click', () => {
             categoriesDropdown.classList.add('hidden');
-            categoriesBtn.classList.remove('active-tab', 'text-black');
-            categoriesBtn.classList.add('text-gray-300');
+            categoriesBtn.classList.remove('active');
         });
 
         function switchView(view) {
