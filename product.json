@@ -1,0 +1,74 @@
+[
+    {
+        "id": "TS-101",
+        "name": "Onyx Black T-Shirt",
+        "originalPrice": 350,
+        "price": 250,
+        "cat": "casual",
+        "isNew": true,
+        "img": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500"
+    },
+    {
+        "id": "TS-102",
+        "name": "Classic White Cotton",
+        "originalPrice": 350,
+        "price": 250,
+        "cat": "casual",
+        "isNew": false,
+        "img": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500"
+    },
+    {
+        "id": "TS-103",
+        "name": "Royal Blue Sports",
+        "originalPrice": 350,
+        "price": 250,
+        "cat": "sports",
+        "isNew": true,
+        "img": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500"
+    },
+    {
+        "id": "TS-104",
+        "name": "Urban Oversized",
+        "originalPrice": 350,
+        "price": 250,
+        "cat": "oversized",
+        "isNew": true,
+        "img": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=500"
+    },
+    {
+        "id": "TS-105",
+        "name": "Premium Gray Edition",
+        "originalPrice": 350,
+        "price": 250,
+        "cat": "premium",
+        "isNew": false,
+        "img": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=500"
+    },
+    {
+        "id": "TS-106",
+        "name": "Dark Maroon Casual",
+        "originalPrice": 350,
+        "price": 250,
+        "cat": "casual",
+        "isNew": false,
+        "img": "https://images.unsplash.com/photo-1554568218-0f1715e72254?w=500"
+    },
+    {
+        "id": "TS-107",
+        "name": "Sports Pro Level",
+        "originalPrice": 350,
+        "price": 250,
+        "cat": "sports",
+        "isNew": true,
+        "img": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500"
+    },
+    {
+        "id": "TS-108",
+        "name": "Luxury Silk Finish",
+        "originalPrice": 350,
+        "price": 250,
+        "cat": "premium",
+        "isNew": true,
+        "img": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=500"
+    }
+]
