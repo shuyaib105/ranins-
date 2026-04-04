@@ -3,7 +3,7 @@
         "id": "IS-101",
         "name": "Islamic T-Shirt Collection",
         "originalPrice": 350,
-        "price": 250,
+        "price": 280,
         "cat": "islamic",
         "isNew": true,
         "img": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500"
@@ -12,7 +12,7 @@
         "id": "IS-102",
         "name": "Premium Islamic Wear",
         "originalPrice": 350,
-        "price": 250,
+        "price": 280,
         "cat": "islamic",
         "isNew": false,
         "img": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500"
@@ -21,7 +21,7 @@
         "id": "MV-201",
         "name": "Never Give Up Edition",
         "originalPrice": 350,
-        "price": 250,
+        "price": 280,
         "cat": "motivational",
         "isNew": true,
         "img": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500"
@@ -30,7 +30,7 @@
         "id": "MV-202",
         "name": "Dream Big Motivational",
         "originalPrice": 350,
-        "price": 250,
+        "price": 280,
         "cat": "motivational",
         "isNew": false,
         "img": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=500"
@@ -39,7 +39,7 @@
         "id": "CL-301",
         "name": "Vintage Classic Design",
         "originalPrice": 350,
-        "price": 250,
+        "price": 280,
         "cat": "classical",
         "isNew": true,
         "img": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=500"
@@ -48,7 +48,7 @@
         "id": "CL-302",
         "name": "Retro Classic Print",
         "originalPrice": 350,
-        "price": 250,
+        "price": 280,
         "cat": "classical",
         "isNew": false,
         "img": "https://images.unsplash.com/photo-1554568218-0f1715e72254?w=500"
@@ -57,7 +57,7 @@
         "id": "MB-401",
         "name": "Rock Band Collection",
         "originalPrice": 350,
-        "price": 250,
+        "price": 280,
         "cat": "musicband",
         "isNew": true,
         "img": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500"
@@ -66,7 +66,7 @@
         "id": "MB-402",
         "name": "Music Legends Edition",
         "originalPrice": 350,
-        "price": 250,
+        "price": 280,
         "cat": "musicband",
         "isNew": false,
         "img": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=500"
